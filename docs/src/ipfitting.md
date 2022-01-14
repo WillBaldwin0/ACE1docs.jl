@@ -1,3 +1,3 @@
 
-## IPFitting.jl
+# IPFitting.jl
 

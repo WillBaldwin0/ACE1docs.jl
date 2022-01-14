@@ -1,5 +1,5 @@
 
-## Using an existing ACE.jl model
+# Using an existing ACE.jl model
 
 should provide examples of usage from 
 * Julia
