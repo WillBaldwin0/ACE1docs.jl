@@ -1,0 +1,13 @@
+name = "ACEdocs"
+uuid = "b76a77aa-664e-43ab-8e53-6ef2b2f144e6"
+authors = ["Christoph Ortner <christophortner0@gmail.com> and contributors"]
+version = "0.1.0"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+julia = "1.7"
+
+[targets]
+test = ["Test"]
