@@ -1,16 +1,16 @@
-using ACEdocs
+using ACE1docs
 using Documenter
 
-DocMeta.setdocmeta!(ACEdocs, :DocTestSetup, :(using ACEdocs); recursive=true)
+DocMeta.setdocmeta!(ACE1docs, :DocTestSetup, :(using ACE1docs); recursive=true)
 
 makedocs(;
-    modules=[ACEdocs],
+    modules=[ACE1docs],
     authors="Christoph Ortner <christophortner0@gmail.com> and contributors",
-    repo="https://github.com/ACEsuit/ACEdocs.jl/blob/{commit}{path}#{line}",
-    sitename="ACEdocs.jl",
+    repo="https://github.com/ACEsuit/ACE1docs.jl/blob/{commit}{path}#{line}",
+    sitename="ACE1docs.jl",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://ACEsuit.github.io/ACEdocs.jl",
+        canonical="https://ACEsuit.github.io/ACE1docs.jl",
         assets=String[],
     ),
     pages=[
@@ -26,6 +26,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/ACEsuit/ACEdocs.jl",
+    repo="github.com/ACEsuit/ACE1docs.jl",
     devbranch="main",
 )

@@ -3,7 +3,7 @@
 julia_version = "1.7.1"
 manifest_format = "2.0"
 
-[[deps.ACEdocs]]
+[[deps.ACE1docs]]
 path = ".."
 uuid = "b76a77aa-664e-43ab-8e53-6ef2b2f144e6"
 version = "0.1.0"

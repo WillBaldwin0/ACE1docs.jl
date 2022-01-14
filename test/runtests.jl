@@ -1,6 +1,6 @@
-using ACEdocs
+using ACE1docs
 using Test
 
-@testset "ACEdocs.jl" begin
+@testset "ACE1docs.jl" begin
     # Write your tests here.
 end
