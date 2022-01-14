@@ -2,13 +2,8 @@
 CurrentModule = ACEdocs
 ```
 
-# ACEdocs
+# ACEsuit User Documentation 
 
-Documentation for [ACEdocs](https://github.com/cortner/ACEdocs.jl).
 
 ```@index
-```
-
-```@autodocs
-Modules = [ACEdocs]
 ```
