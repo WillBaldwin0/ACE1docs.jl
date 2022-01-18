@@ -20,6 +20,7 @@ makedocs(;
             "gettingstarted/installation.md",
             "gettingstarted/using.md",
             "gettingstarted/developing.md",
+            "gettingstarted/pkg.md",
         ],
         "IPFitting.jl" => "ipfitting.md", 
     ],
