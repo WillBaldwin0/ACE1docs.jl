@@ -1,43 +1,50 @@
 
 # Installation Instructions
 
-## Short Version
+## One-line Version
 
 From the Julia REPL: 
 ```julia
-using Pkg; pkg"registry add https://github.com/JuliaRegistries/General"; pkg"registry add https://github.com/JuliaMolSim/MolSim.git"; pkg"add JuLIP ACE1 PyCall ASE IPFitting"
+using Pkg; pkg"registry add https://github.com/JuliaRegistries/General"; pkg"registry add https://github.com/JuliaMolSim/MolSim.git"; pkg"add JuLIP ACE1 PyCall ASE IPFitting@0.4"
 ```
 
 ## Detailed Instructions
 
-If you have any difficulties with the following setup process, please file an issue. We highly recommend familiarizing oneself with the [Julia package manager](https://github.com/JuliaLang/Pkg.jl) and how Project management is best done in Julia. In particular all project should manage their own `Project.toml` file with appropriate version bounds, and where appropriate the `Manifest.toml` file can be tracked in order to guarantee reproducability of results. 
+If you have any difficulties with the following setup process, please file an issue. We highly recommend familiarizing oneself with the [Julia package manager](https://github.com/JuliaLang/Pkg.jl) and how Project management is best done in Julia. In particular all projects should manage their own `Project.toml` file with appropriate version bounds, and where appropriate the `Manifest.toml` file can be tracked in order to guarantee reproducibility of results. 
 
-1. Install [Julia](https://julialang.org). We recommend v1.6 or upwards. 
-2. Install the [`MolSim` registry](https://github.com/JuliaMolSim/MolSim): start the Julia REPL, switch to package manager by typing `]` and then run
-    ```julia
-    registry add https://github.com/JuliaRegistries/General
-    registry add https://github.com/JuliaMolSim/MolSim.git
-    ```
-3. Create a folder for your new project that will use `ACE1.jl`. Change to that folder, start the Julia REPL and activate a new project, by switching to the package manager `]`, and then 
-    ```julia 
-    activate .
-    ```
+### Installing Julia
+
+Download and unpack [Julia](https://julialang.org). We recommend v1.6 or upwards. Add the `julia` executable to your path with something like `export PATH=<julia-directory>/bin:$PATH`.
+
+Start the Julia REPL (type `julia` followed by Enter), switch to package manager by typing `]`, then install the General registry and the [`MolSim` registry](https://github.com/JuliaMolSim/MolSim):
+```julia
+registry add https://github.com/JuliaRegistries/General
+registry add https://github.com/JuliaMolSim/MolSim.git
+```
+Press Backspace or `Ctrl-c` to exit the package manager. Use `Ctrl-d` or `exit()` followed by Enter or Return to close the Julia REPL.
+
+### Setting up a project using ACE1
+
+Create a folder for your new project and change to it. Start the Julia REPL and activate a new project, by switching to the package manager `]`, and then 
+```julia 
+activate .
+```
 Now you can install the relevant packages that you need, e.g., 
-    ```julia
-    add JuLIP ACE1
-    ```
+```julia
+add JuLIP ACE1
+```
 Next you should probably edit `Project.toml` and insert a version bound for `ACE1` - see the Julia [package manager documentation](https://pkgdocs.julialang.org/dev/) for more information.
 
-4. To use [ase](https://wiki.fysik.dtu.dk/ase/) from Julia, you can use [PyCall](https://github.com/JuliaPy/PyCall.jl) or the [ASE.jl](https://github.com/JuliaMolSim/ASE.jl) interface. To install these, run
-    ```julia
-    add PyCall ASE
-    ```
+To use [ase](https://wiki.fysik.dtu.dk/ase/) from Julia, you can use [PyCall](https://github.com/JuliaPy/PyCall.jl) or the [ASE.jl](https://github.com/JuliaMolSim/ASE.jl) interface. To install these, run
+```julia
+add PyCall ASE
+```
 from the package manager to add those to your project.
 
-5. For fitting, you may wish to use [`IPFitting.jl`](https://github.com/cortner/IPFitting.jl),
-    ```julia
-    add IPFitting
-    ```
+For fitting, you may wish to use [`IPFitting.jl`](https://github.com/ACEsuit/IPFitting.jl),
+```julia
+add IPFitting@0.4
+```
 This has `ASE.jl` as a dependency.
 
 ## Trouble-shooting
