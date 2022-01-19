@@ -5,7 +5,7 @@
 
 From the Julia REPL: 
 ```julia
-using Pkg; pkg"registry add https://github.com/JuliaMolSim/MolSim.git"; pkg"add JuLIP ACE PyCall ASE IPFitting"
+using Pkg; pkg"registry add https://github.com/JuliaRegistries/General"; pkg"registry add https://github.com/JuliaMolSim/MolSim.git"; pkg"add JuLIP ACE1 PyCall ASE IPFitting"
 ```
 
 ## Detailed Instructions
@@ -14,29 +14,30 @@ If you have any difficulties with the following setup process, please file an is
 
 1. Install [Julia](https://julialang.org). We recommend v1.6 or upwards. 
 2. Install the [`MolSim` registry](https://github.com/JuliaMolSim/MolSim): start the Julia REPL, switch to package manager by typing `]` and then run
-```julia
-registry add https://github.com/JuliaMolSim/MolSim.git
-```
+    ```julia
+    registry add https://github.com/JuliaRegistries/General
+    registry add https://github.com/JuliaMolSim/MolSim.git
+    ```
 3. Create a folder for your new project that will use `ACE1.jl`. Change to that folder, start the Julia REPL and activate a new project, by switching to the package manager `]`, and then 
-```julia 
-activate .
-```
+    ```julia 
+    activate .
+    ```
 Now you can install the relevant packages that you need, e.g., 
-```julia
-add JuLIP ACE1
-```
+    ```julia
+    add JuLIP ACE1
+    ```
 Next you should probably edit `Project.toml` and insert a version bound for `ACE1` - see the Julia [package manager documentation](https://pkgdocs.julialang.org/dev/) for more information.
 
 4. To use [ase](https://wiki.fysik.dtu.dk/ase/) from Julia, you can use [PyCall](https://github.com/JuliaPy/PyCall.jl) or the [ASE.jl](https://github.com/JuliaMolSim/ASE.jl) interface. To install these, run
-```julia
-add PyCall ASE
-```
+    ```julia
+    add PyCall ASE
+    ```
 from the package manager to add those to your project.
 
 5. For fitting, you may wish to use [`IPFitting.jl`](https://github.com/cortner/IPFitting.jl),
-```julia
-add IPFitting
-```
+    ```julia
+    add IPFitting
+    ```
 This has `ASE.jl` as a dependency.
 
 ## Trouble-shooting
