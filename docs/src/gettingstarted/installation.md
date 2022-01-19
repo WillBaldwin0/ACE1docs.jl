@@ -1,11 +1,20 @@
 
 # Installation Instructions
 
-## One-line Version
+## Short Version
 
-From the Julia REPL, assuming you want to create a project in the current directory: 
+From the Julia REPL, run: 
 ```julia
-using Pkg; Pkg.activate("."); pkg"registry add https://github.com/JuliaRegistries/General"; pkg"registry add https://github.com/JuliaMolSim/MolSim.git"; pkg"add JuLIP ACE1 PyCall ASE IPFitting@0.4"
+using Pkg; Pkg.activate("."); pkg"registry add https://github.com/JuliaRegistries/General"; pkg"registry add https://github.com/JuliaMolSim/MolSim.git"; pkg"add JuLIP ACE1 PyCall ASE IPFitting"
+```
+Expect an error arising from incompatible versions. To fix it, close the REPL, open `Project.toml`, and add the following to the bottom
+```
+[compat]
+IPFitting = "0.4"
+```
+Back in the REPL, update the packages:
+```julia
+using Pkg; Pkg.activate("."); Pkg.update()
 ```
 
 ## Detailed Instructions
@@ -21,31 +30,39 @@ Start the Julia REPL (type `julia` followed by Enter), switch to package manager
 registry add https://github.com/JuliaRegistries/General
 registry add https://github.com/JuliaMolSim/MolSim.git
 ```
-Press Backspace or `Ctrl-c` to exit the package manager. Use `Ctrl-d` or `exit()` followed by Enter or Return to close the Julia REPL.
+Press Backspace or `Ctrl-c` to exit the package manager. Use `Ctrl-d`, or `exit()` followed by Enter, to close the Julia REPL.
 
 ### Setting up a project using ACE1
 
-Create a folder for your new project and change to it. Start the Julia REPL and activate a new project, by switching to the package manager `]`, and then 
+Create a folder for your new project and change to it. Start the Julia REPL and activate a new project by switching to the package manager with `]`, and then running
 ```julia 
 activate .
 ```
-Now you can install the relevant packages that you need, e.g., 
+Now you can install the packages you need. (Ignore any installation errors during the initial install, and note the version information below.) Remaining in the package manager, start with
 ```julia
 add JuLIP ACE1
 ```
-Next you should probably edit `Project.toml` and insert a version bound for `ACE1`. See [this section](/docs/src/gettingstarted/pkg.md) and the Julia [package manager documentation](https://pkgdocs.julialang.org/dev/) for more information.
-
 To use [ase](https://wiki.fysik.dtu.dk/ase/) from Julia, you can use [PyCall](https://github.com/JuliaPy/PyCall.jl) or the [ASE.jl](https://github.com/JuliaMolSim/ASE.jl) interface. To install these, run
 ```julia
 add PyCall ASE
 ```
-from the package manager to add those to your project.
-
 For fitting, you may wish to use [`IPFitting.jl`](https://github.com/ACEsuit/IPFitting.jl),
 ```julia
-add IPFitting@0.4
+add IPFitting
 ```
-`IPFitting.jl` has `ASE.jl` as a dependency, and IPFitting versions 0.5 and upwards are not compatible with ACE1 at the moment.
+Note that `IPFitting.jl` has `ASE.jl` as a dependency.
+
+Finally, set version restrictions by closing the REPL, opening `Project.toml`, and adding the following to the bottom
+```
+[compat]
+IPFitting = "0.4"
+```
+Back in the REPL, update the packages:
+```julia
+using Pkg; Pkg.activate("."); Pkg.update()
+```
+See [this section](/docs/src/gettingstarted/pkg.md) and the Julia [package manager documentation](https://pkgdocs.julialang.org/dev/) for more information.
+
 
 ## Trouble-shooting
 
