@@ -33,7 +33,7 @@ Now you can install the relevant packages that you need, e.g.,
 ```julia
 add JuLIP ACE1
 ```
-Next you should probably edit `Project.toml` and insert a version bound for `ACE1` - see the Julia [package manager documentation](https://pkgdocs.julialang.org/dev/) for more information.
+Next you should probably edit `Project.toml` and insert a version bound for `ACE1`. See [this section](/docs/src/gettingstarted/pkg.md) and the Julia [package manager documentation](https://pkgdocs.julialang.org/dev/) for more information.
 
 To use [ase](https://wiki.fysik.dtu.dk/ase/) from Julia, you can use [PyCall](https://github.com/JuliaPy/PyCall.jl) or the [ASE.jl](https://github.com/JuliaMolSim/ASE.jl) interface. To install these, run
 ```julia
