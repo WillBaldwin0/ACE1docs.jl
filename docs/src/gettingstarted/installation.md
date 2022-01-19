@@ -45,7 +45,7 @@ For fitting, you may wish to use [`IPFitting.jl`](https://github.com/ACEsuit/IPF
 ```julia
 add IPFitting@0.4
 ```
-This has `ASE.jl` as a dependency.
+`IPFitting.jl` has `ASE.jl` as a dependency, and IPFitting versions 0.5 and upwards are not compatible with ACE1 at the moment.
 
 ## Trouble-shooting
 
