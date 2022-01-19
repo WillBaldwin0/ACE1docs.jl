@@ -3,9 +3,9 @@
 
 ## One-line Version
 
-From the Julia REPL: 
+From the Julia REPL, assuming you want to create a project in the current directory: 
 ```julia
-using Pkg; pkg"registry add https://github.com/JuliaRegistries/General"; pkg"registry add https://github.com/JuliaMolSim/MolSim.git"; pkg"add JuLIP ACE1 PyCall ASE IPFitting@0.4"
+using Pkg; Pkg.activate("."); pkg"registry add https://github.com/JuliaRegistries/General"; pkg"registry add https://github.com/JuliaMolSim/MolSim.git"; pkg"add JuLIP ACE1 PyCall ASE IPFitting@0.4"
 ```
 
 ## Detailed Instructions
