@@ -2,7 +2,7 @@
 CurrentModule = ACE1docs
 ```
 
-# ACEsuit User Documentation 
+# ACE1 User Documentation 
 
 
 ```@index
