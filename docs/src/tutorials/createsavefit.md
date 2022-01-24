@@ -3,8 +3,9 @@
 using ACE1
 using IPFitting
 
-### READING IN XYZ
+```julia
 al = IPFitting.Data.read_xyz(@__DIR__() * "/TiAl_tutorial_DB.xyz", energy_key="energy", force_key="force", virial_key="virial")[1:10:end];
+```
 
 ### TAKE AVERAGE TYPICAL DISTANCE
 ### WE CAN DO THIS PAIR SPECIFIC, MAYBE OTHER NOTEBOOK?
