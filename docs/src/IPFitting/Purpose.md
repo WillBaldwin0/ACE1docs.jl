@@ -78,4 +78,3 @@ To implement this, the least squares database subtracts the reference from the o
 ```
 Vref = OneBody(:Ti => -1586.0195, :Al => -105.5954)
 ```
-
