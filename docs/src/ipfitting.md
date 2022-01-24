@@ -13,6 +13,7 @@ Using an ACE basis `B` a linear system can then be created
 
 ```julia
 dB = LsqDB("", B, al)
+```
 
 
 Before solving generally a reference potential is defined containing the isolated atom energies
