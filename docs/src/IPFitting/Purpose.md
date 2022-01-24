@@ -12,7 +12,20 @@ Having explicitly constructed such a basis set, the coefficients ``c_\nu`` can b
 \mathbf{c} = \text{arg} \min_\mathbf{c} \sum_i \left( \phi_i - \sum_\nu c_\nu B_\nu(\mathcal{C}_i) \right)^2
 ```
 
-`ACE1.jl` describes the symmetric basis set; `IPFitting.jl` handles the assembly and solution of the resulting least squares system, and provides a variety of methods for doing so. 
+`ACE1.jl` describes the symmetric basis set; `IPFitting.jl` handles the assembly and solution of the resulting least squares system, and provides a variety of methods for doing so. `IPFitting.jl` also defines a type `Dat` which represents a labelled atomic configuration.
+
+# The `Dat` Type
+
+labelled atomic configurations are stored in `IPFitting.Dat` objects. These contain:
+```julia
+mutable struct Dat
+   at::Atoms                         # JuLIP atoms object, describing the configuration
+   configtype::String                # identifier which can be used to group Dats into subsets
+   D::Dict{String, Vector{Float64}}  # list of observations eg. Dict(E => 5.0, F => Vector{Float64}()... )
+   rows::Dict{String, Vector{Int}}   # row indices for LSQ system
+   info::Dict{String, Any}           # place to put other information
+end
+```
 
 # The Least Squares Database
 
