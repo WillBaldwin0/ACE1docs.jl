@@ -27,7 +27,7 @@ where the parameters have the following meaning:
 * `N` : correlation order 
 * `maxdeg`: maximum polynomial degree 
 * `D` : specifies the notion of polynomial degree for which there is no canonical definition in the multivariate setting. Here we use `SparsePSHDegree` which specifies a general class of sparse basis sets; see its documentation for more details.
-* `r0` : an estimate on the nearest-neighbour distance for scaling
+* `r0` : an estimate on the nearest-neighbour distance for scaling, `JuLIP.rnn()` function returns element specific earest-neighbour distance
 * `rin, rcut` : inner and outer cutoff radii 
 * `pin` :  specifies the behaviour of the basis as the inner cutoff radius.
 
