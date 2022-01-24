@@ -18,13 +18,15 @@ dB = LsqDB("", B, al)
 Before solving generally a reference potential is defined containing the isolated atom energies
 
 ```julia
-Vref = OneBody(:Ti => -1586.0195, :Al => -105.5954)`
+Vref = OneBody(:Ti => -1586.0195, :Al => -105.5954)
+```
 
 as well as the energy/force/virial weights.
 
 ```julia
 weights = Dict(
-        "default" => Dict("E" => 5.0, "F" => 1.0 , "V" => 1.0 ))`
+        "default" => Dict("E" => 5.0, "F" => 1.0 , "V" => 1.0 ))
+```
 
 Solving the linear system can be done through the use of several solvers:
 
