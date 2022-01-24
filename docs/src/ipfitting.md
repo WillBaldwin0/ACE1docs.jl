@@ -5,7 +5,9 @@ IPFitting.jl is used to fit ACE1 potentials by using the ACE1 basis to create an
 
 Reading in a `.xyz` database is done as follows and requires the energy/force/virial keys to be set. 
 
-`al = IPFitting.Data.read_xyz(@__DIR__() * "/TiAl_tutorial_DB.xyz", energy_key="energy", force_key="force", virial_key="virial")`
+```julia
+al = IPFitting.Data.read_xyz(@__DIR__() * "/TiAl_tutorial_DB.xyz", energy_key="energy", force_key="force", virial_key="virial")
+```
 
 Using an ACE basis `B` a linear system can then be created
 
