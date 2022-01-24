@@ -77,7 +77,7 @@ math
 \phi(\mathcal{C}) = V(\mathcal{C}) + \sum_\nu c_\nu B_\nu(\mathcal{C})
 ```
 To implement this, the least squares database subtracts the reference from the observations before forming the linear system. The energy of the isolated atoms (a `OneBody` potential) is good reference potential:
-
+```
 Vref = OneBody(:Ti => -1586.0195, :Al => -105.5954)
-
+```
 
