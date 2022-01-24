@@ -25,14 +25,13 @@ where ``y_i = \phi_i`` are the observations of the true function, and ``\Psi_{i 
 ```
 dB = LsqDB(save_name, basis, train)
 ```
-
-If `save_name` is the empty string, the least squares system, which can be very large, is not saved to disk. Otherwise, `save_name` should be a string not including any file extension, which is added by IPFitting. `train` shuold be a vector of julia {?JuLIP?} atoms objects.
+If `save_name` is the empty string, the least squares system, which can be very large, is not saved to disk. Otherwise, `save_name` should be a string not including any file extension, which is added by IPFitting. `basis` is the ACE basis. `train` is a `Vector` of IPFitting `Dat` objects representing the training set. 
 
 ## Structure of the Linear System.
 
 Observations of the energy, forces and virial stresses of an atomic configuration can be used to train a model. Each scalar observable contributes one row to the linear system: An energy observation therefore contributes a single row, and the forces on all the of the N atoms in a configuration contribute 3N rows. 
 
-Training configurations can also be distinguised from one another by setting the `configtype` field in the JuLIP atoms object. The least squares database recognises the config type of a configuration, which can be used to use different settings for different config types when fitting.
+Training configurations can also be distinguised from one another by setting the `configtype` field in the IPFitting `Dat` object. The least squares database recognises the config type of a configuration, which can be used to use different settings for different config types when fitting.
 
 # Solving the Linear System
 
@@ -40,7 +39,6 @@ Solution is performed by calling `lsqfit`.
 ```
 IP, lsqinfo = lsqfit(dB, solver=solver, weights=weights, Vref=Vref)
 ```
-
 arguments:
 * dB : `IPFitting.lstD`. The least sqaures system to be solved. 
 * solver : `Dict()`. Specifies the solution method.
@@ -76,7 +74,7 @@ It is also possible to suply a reference potential ``V``, which acts as a baseli
 math
 \phi(\mathcal{C}) = V(\mathcal{C}) + \sum_\nu c_\nu B_\nu(\mathcal{C})
 ```
-To implement this, the least squares database subtracts the reference from the observations before forming the linear system. The energy of the isolated atoms (a `OneBody` potential) is good reference potential:
+To implement this, the least squares database subtracts the reference from the observations before forming the linear system. The energy of the uninteracting isolated atoms (a `OneBody` potential) is good reference potential:
 ```
 Vref = OneBody(:Ti => -1586.0195, :Al => -105.5954)
 ```
