@@ -51,11 +51,11 @@ returns:
 
 The arguments are described in the following sections.
 
-## solvers
+## Solvers
 
 Once the linear system has been formed, several methods exist for solving the above linear system. Some involve modifying the above minimisation statement but still require the design matrix and observation vector. Currently there are 4{?} solvers implemented in IPFitting which are discussed in solvers{link to solvers section}.
 
-## weights
+## Weights
 
 The weights dictionary can be used to rescale rows of the linear equation to emphasise some observations more than others. For instance, it may be useful to weight the rows of the linear system corresponding to the energy larger than those corresponding to forces, if there are many more force observations than energy observations. 
 
@@ -67,7 +67,7 @@ weights = Dict(
         "Phonon" => Dict("E" => 10.0, "F" => 10.0 , "V" => 10.0 ))
 ```
 
-## reference potential
+## Reference potential
 
 It is also possible to suply a reference potential ``V``, which acts as a baseline for the prediction. If a reference potential is supplied, the prediction is modelled as
 ```
