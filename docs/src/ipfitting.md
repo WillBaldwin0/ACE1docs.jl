@@ -41,7 +41,7 @@ Solving the linear system can be done through the use of several solvers:
 
 Performing the fit, `asmerrs=true` calculates the training errors which are also stored in the `lsqinfo`
 
-IP, lsqinfo = lsqfit(dB, weights=weights, Vref=Vref, asmerrs = true).
+`IP, lsqinfo = lsqfit(dB, weights=weights, Vref=Vref, asmerrs = true)`.
 
 Exporting to `.yace` format for LAMMPs support. More details on how to run the `.yace` potential in ...
 
